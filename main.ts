@@ -27,6 +27,6 @@ input.onButtonPressed(Button.B, function () {
 basic.forever(function () {
     music.playMelody("C D A - C - D - ", 400)
     strip = neopixel.create(DigitalPin.P0, 24, NeoPixelMode.RGB)
-    strip.setBrightness(255)
+    strip.setBrightness(100)
     strip.showRainbow(1, 360)
 })
