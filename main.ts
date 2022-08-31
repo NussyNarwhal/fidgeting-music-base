@@ -1,25 +1,20 @@
-input.onPinPressed(TouchPin.P0, function () {
-	
+input.onButtonPressed(Button.A, function () {
+    for (let index = 0; index < 1; index++) {
+        music.playMelody("C D A C5 A C5 A F ", 800)
+        music.playMelody("D C D F C C C5 C5 ", 109)
+    }
 })
-music.onEvent(MusicEvent.MelodyNotePlayed, function () {
-	
+input.onButtonPressed(Button.AB, function () {
+    for (let index = 0; index < 1; index++) {
+        music.playMelody("A A A F D F A - ", 300)
+    }
 })
-basic.showLeds(`
-    . # . . .
-    # . # . .
-    . . . . .
-    . . . . .
-    . . . . .
-    `)
-basic.showLeds(`
-    . . . . .
-    . # . . .
-    . . . . .
-    . . . . .
-    . . . . .
-    `)
-basic.showArrow(ArrowNames.North)
+input.onButtonPressed(Button.B, function () {
+    for (let index = 0; index < 1; index++) {
+        music.playMelody("A F A F A F E D ", 300)
+        music.playMelody("E - D C A F E D ", 120)
+    }
+})
 basic.forever(function () {
-    music.playMelody("C D C - C - D E ", 600)
-    music.playMelody("D E D - D C C C5 ", 600)
+    music.playMelody("C D A - C - D - ", 400)
 })
