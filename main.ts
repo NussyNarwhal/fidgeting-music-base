@@ -22,7 +22,7 @@ pins.setPull(DigitalPin.P2, PinPullMode.PullUp)
 pins.setPull(DigitalPin.P5, PinPullMode.PullUp)
 pins.setPull(DigitalPin.P11, PinPullMode.PullUp)
 basic.forever(function () {
-    if (pins.digitalReadPin(DigitalPin.P1) == 0 && pins.digitalReadPin(DigitalPin.P1) == 0) {
+    if (pins.digitalReadPin(DigitalPin.P1) == 0 && pins.digitalReadPin(DigitalPin.P2) == 0) {
         music.playMelody("E A A F D F A - ", 300)
         for (let index = 0; index < 60; index++) {
             strip.showRainbow(1, 360)
@@ -34,8 +34,32 @@ basic.forever(function () {
             strip.showRainbow(1, 360)
             strip.show()
         }
-    } else {
-    	
+    }
+    if (pins.digitalReadPin(DigitalPin.P1) == 0) {
+        music.playMelody("G G G G G G G G ", 300)
+        for (let index = 0; index < 60; index++) {
+            strip.showRainbow(1, 360)
+            strip.show()
+        }
+    } else if (pins.digitalReadPin(DigitalPin.P2) == 0) {
+        music.playMelody("C5 C5 C5 C5 C5 C5 C5 C5 ", 300)
+        for (let index = 0; index < 60; index++) {
+            strip.showRainbow(1, 360)
+            strip.show()
+        }
+    }
+    if (pins.digitalReadPin(DigitalPin.P5) == 0) {
+        music.playMelody("C C C C C C C C ", 300)
+        for (let index = 0; index < 60; index++) {
+            strip.showRainbow(1, 360)
+            strip.show()
+        }
+    } else if (pins.digitalReadPin(DigitalPin.P11) == 0) {
+        music.playMelody("D D D D D D D D ", 300)
+        for (let index = 0; index < 60; index++) {
+            strip.showRainbow(1, 360)
+            strip.show()
+        }
     }
 })
 basic.forever(function () {
@@ -44,4 +68,22 @@ basic.forever(function () {
         strip.show()
     }
     music.playMelody("C D A - C - D - ", 400)
+    basic.pause(100)
+    music.playMelody("C C5 A - C - D - ", 400)
+    basic.pause(100)
+    music.playMelody("C D A - C - D - ", 400)
+    basic.pause(100)
+    music.playMelody("C B A B A E D - ", 400)
+    basic.pause(100)
+    music.playMelody("C D E F G A B C5 ", 400)
+    basic.pause(100)
+    music.playMelody("C5 B A G F E D E ", 400)
+    basic.pause(100)
+    music.playMelody("C C5 A - C - D - ", 400)
+    basic.pause(100)
+    music.playMelody("C C5 G - C - D - ", 400)
+    basic.pause(100)
+    music.playMelody("C E G - C - D - ", 400)
+    basic.pause(100)
+    music.playMelody("C E E E D C C C ", 400)
 })
